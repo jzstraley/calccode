@@ -245,6 +245,22 @@ export default function CalcRunner({ calc }) {
             )}
           </>
         )}
+
+        {calc.links?.length > 0 && (
+          <div className="ccLinks">
+            {calc.links.map((lnk, i) => (
+              <a
+                key={i}
+                href={lnk.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ccLinkBtn"
+              >
+                {lnk.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
