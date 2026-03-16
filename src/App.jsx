@@ -4,6 +4,7 @@ import { HeartPulse, Plus, Search, Star } from "lucide-react";
 import { CALCS } from "./calcs/index.js";
 import { useLocalStorage } from "./utils/storage.js";
 import CalcRunner from "./components/CalcRunner.jsx";
+import Landing from "./components/Landing.jsx";
 
 function pickCalc(id) {
   return CALCS.find((c) => c.id === id) || null;
@@ -156,41 +157,7 @@ export default function App() {
       {/* Main canvas */}
       <main className="ccCanvas">
         {!activeCalc ? (
-          <div className="ccHome">
-            <div className="ccCenter">
-              <div className="ccMascot" aria-hidden="true" />
-              <div className="ccCenterTitle">Type a calculator name</div>
-              <div className="ccCenterSub">
-                Press Enter to open the first match. Press Esc to focus the bar.
-              </div>
-
-              {recentCalcs.length > 0 && (
-                <div className="ccSection">
-                  <div className="ccSectionTitle">Recent</div>
-                  <div className="ccChipRow">
-                    {recentCalcs.slice(0, 8).map((c) => (
-                      <button key={c.id} className="ccChip" onClick={() => openCalc(c.id)} type="button">
-                        {c.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {pinned.length > 0 && (
-                <div className="ccSection">
-                  <div className="ccSectionTitle">Pinned</div>
-                  <div className="ccChipRow">
-                    {pinned.slice(0, 8).map((c) => (
-                      <button key={c.id} className="ccChip" onClick={() => openCalc(c.id)} type="button">
-                        {c.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          <Landing onOpenCalc={openCalc} pinned={pinned} recentCalcs={recentCalcs} />
         ) : (
           <div className="ccCalc">
             <div className="ccCalcHeader">

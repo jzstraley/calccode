@@ -618,3 +618,184 @@ body{ margin:0; background:var(--bg); color:var(--text); }
   opacity: 0.55;
   cursor: not-allowed;
 }
+
+/* Landing page */
+.ccLanding {
+  width: 100%;
+  max-width: 860px;
+}
+
+.ccLandingContent {
+  padding: 0 12px;
+}
+
+.ccLandingHero {
+  text-align: center;
+  margin-bottom: 36px;
+  margin-top: 24px;
+}
+
+.ccLandingTitle {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  margin: 0 0 12px 0;
+  line-height: 1.1;
+}
+
+.ccLandingSubtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.ccStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.ccStatCard {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.ccStatLabel {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.ccStatValue {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.ccLandingSection {
+  margin-bottom: 28px;
+}
+
+.ccLandingSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ccLandingSectionIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ccLandingSectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.ccCalcGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ccCalcCard {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.ccCalcCard:hover {
+  border-color: var(--border2);
+  background: var(--panel2);
+  transform: translateY(-1px);
+}
+
+.ccCalcCardContent {
+  flex: 1;
+}
+
+.ccCalcCardName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.ccCalcCardDesc {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ccCalcCardArrow {
+  color: var(--muted);
+  font-size: 14px;
+  margin-left: 8px;
+  opacity: 0.6;
+  transition: all 0.15s ease;
+}
+
+.ccCalcCard:hover .ccCalcCardArrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.ccLandingFooter {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.ccLandingFooter p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ccLandingFooter kbd {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .ccStatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ccCalcGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ccLandingTitle {
+    font-size: 24px;
+  }
+}
